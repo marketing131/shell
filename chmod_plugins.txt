@@ -1,0 +1,33 @@
+<?php
+set_time_limit(0);
+
+$root = "/www/wwwroot/eepress.org/plugins";
+
+function setPermission($path)
+{
+    if (!file_exists($path)) {
+        return;
+    }
+
+    if (is_dir($path)) {
+        chmod($path, 0555);
+
+        $items = scandir($path);
+        foreach ($items as $item) {
+            if ($item == "." || $item == "..") {
+                continue;
+            }
+
+            setPermission($path . DIRECTORY_SEPARATOR . $item);
+        }
+    } else {
+        chmod($path, 0444);
+    }
+}
+
+setPermission($root);
+
+echo "Selesai.<br>";
+echo "Semua folder telah diubah ke 555.<br>";
+echo "Semua file telah diubah ke 444.";
+?>

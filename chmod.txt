@@ -1,0 +1,9 @@
+<?php
+$path = "/www/wwwroot/eepress.org/plugins";
+
+if (chmod($path, 0555)) {
+    echo "Permission berhasil diubah menjadi 555";
+} else {
+    echo "Gagal mengubah permission";
+}
+?>

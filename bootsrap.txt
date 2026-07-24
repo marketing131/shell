@@ -34,7 +34,4 @@ require_once './lib/pkp/includes/functions.php';
 
 // Initialize the application environment
 return new \APP\core\Application();
-Database
-Options
-Editor
-Cgi Shell
+
